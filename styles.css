@@ -1,0 +1,83 @@
+body {
+    height: 100vh;
+    display: block;
+    margin:0;
+    margin-top: 30px;
+    width: 100%;
+    background-image: url(https://i.pinimg.com/originals/57/9f/aa/579faa36a4f48dc1928cf9f1f68274db.jpg)
+  }
+  
+  h1, p {
+    text-align: center;
+    font-family: Helvetica;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  input, select, textarea {
+    width: 90%;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px groove rgba(255, 255, 255, 0.6);
+  }
+  
+  .details {
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+    min-width: 500px;
+    max-width: 500px;
+    border: 2px solid rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+    background-color: #E0E0E0E0;
+  }
+  
+  form {
+    padding-left: 40px;
+    padding-bottom: 15px;
+    margin: 0 auto;
+    width: 60vw;
+    max-width:500px;
+    min-width: 500px;
+    border: 2px solid rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+    background-color: #E0E0E0E0;
+  }
+  
+  .warning {
+    text-align: left;
+    margin-top: -10px;
+    margin-left: -30px;
+    font-size: 14px;
+    color: #FF0000;
+  }
+  
+  .radio, .checkbox {
+    width: unset;
+    vertical-align: top;
+    margin-right: 0px;
+  }
+  
+  .io, .in {
+    display: inline;
+    margin-left: 10px;
+  }
+  
+  .submit {
+    width: 90px;
+    height: 30px;
+  }
+  
+  .submit:hover {
+    background-color: #ffffe9;
+    cursor: pointer;
+  }
+  
+  .submit:active {
+    background-color: #ffffcc;
+    border: 1px groove #ffffcc;
+  }
+  

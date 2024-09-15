@@ -1,2 +1,47 @@
-# rsvp-form
-RSVP Form for Dad's Bday!
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dipesh's Birthday RSVP</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="details">
+    <h1 id="title">So... Are You Coming To The Party?</h1>
+    <p id="description">Please send in the RSVP by Friday!</p>
+  </div>
+  <form id="survey-form" method="post" onsubmit="submitForm(event)">
+    <p class="warning"><em>Inputs with * are required</em></p>
+    <label for="name" id="name-label">*Name: <input id="name" type="text" placeholder="John Doe" required /></label>
+    <label for="email" id="email-label">*Email: <input id="email" type="email" placeholder="email@company.com" required /></label>
+    <label for="number" id="number-label">How many people are attending?: <input id="number" type="number" min="1" max="5" placeholder="1...5" /></label>
+    <label for="dropdown" id="dropdown-label">Any dietary restrictions?
+      <select id="dropdown" onchange="dietaryDetails()">
+        <option value="">(Select One)</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </label>
+    
+    <!-- Hidden textarea for dietary details -->
+    <div id="dietary-details" style="display:none;">
+      <label for="dietary-text">Please specify your dietary restrictions: <textarea id="dietary-text" rows="3" cols="30" placeholder="Vegetarian, Vegan, Allergies, etc."></textarea></label>
+    </div>
+
+    <label>Do you prefer an indoor or outdoor party? </label>
+    <label class="io" for="indoor"><input id="indoor" class="radio" name="indoor-outdoor" value="indoor" type="radio" /> Indoor </label>
+    <label class="io" for="outdoor"><input class="radio" id="outdoor" name="indoor-outdoor" value="outdoor" type="radio" /> Outdoor </label>
+    <label class="io" for="both"><input class="radio" id="both" name="indoor-outdoor" value="both" type="radio" /> Both </label>
+    <label>Select the things you would interact with: </label>
+    <label class="in" for="dj"><input id="dj" name="interact" class="checkbox" value="dj" type="checkbox" /> DJ </label>
+    <label class="in" for="appetizers"><input class="checkbox" id="appetizers" name="interact" value="appetizers" type="checkbox" /> Appetizers </label>
+    <label class="in" for="dinner"><input class="checkbox" id="dinner" name="interact" value="dinner" type="checkbox" /> Dinner </label>
+    <label class="in" for="pool"><input id="pool" name="interact" class="checkbox" value="pool" type="checkbox" /> Pool </label>
+    <label class="in" for="yard-games"><input id="yard-games" class="checkbox" name="interact" value="yard-games" type="checkbox" /> Yard-games </label>
+    <label for="best-part">Anything else we should know? <textarea id="best-part" rows="6" cols="32" placeholder="I think you should know that..."></textarea></label>
+    <input id="submit" class="submit" type="submit" />
+  </form>
+
+  <script src="/script.js"></script>
+</body>
+</html>
