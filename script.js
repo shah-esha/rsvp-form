@@ -11,6 +11,7 @@ function dietaryDetails() {
 
   function submitForm(event) {
     event.preventDefault();
+
     const formData = {
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
@@ -20,27 +21,25 @@ function dietaryDetails() {
       interactions: Array.from(document.querySelectorAll('input[name="interact"]:checked')).map(input => input.value).join(", "),
       extraInfo: document.getElementById("best-part").value
     };
-  
-    const url = "https://script.google.com/macros/s/AKfycbwUd91Z5KBcflPJAk2FTd7ApzBU8CDtkk7D_bBceaswgtD2jNfRxLry2mFPKm48l-prQQ/exec";
+
+    const url = "https://script.google.com/macros/s/AKfycbxAaIoZztf7JIFBeHjzmJeEhmNddtI20QBfuuyVpvOWFPdp415fGR-f0rZ33d_3IfycmA/exec";
+
     fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       body: new URLSearchParams(formData)
-    })
-    .then(response => {
-        console.log("Response received:", response);
-      if (response.ok) {
-        console.log("Submission successful, redirecting to thanks page...");
-        window.location.href = "thanks.html"; 
+    }).then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        window.location.href = "thanks.html";
       } else {
-        console.error("Response was not OK:", response.status, response.statusText);
+        console.error("Submission failed:", data);
       }
-    })
-    .catch(error => {
+    }).catch(error => {
       console.error("Error:", error);
     });
-  }
-  
+}
+
   
